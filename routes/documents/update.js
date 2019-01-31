@@ -4,6 +4,7 @@ const Document = require('../../db/models/documents.js');
 
 router.put('/:id', function(req, res) {
 	const data = req.body;
+	console.log(`Updating post with ID ${req.params.id}`, req.body);
 
 	Document.update( { _id: req.params.id }, req.body )
 	.then( response => {
